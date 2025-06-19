@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployent
+metadata:
+  name: zishan-portfolio-main-deployment
+spec:
+  selector:
+    matchLabels:
+      app: zishan-portfolio-main-label 
+  replicas:2
+  template:
+    metadata:
+      label:
+        app: zishan-portfolio-main-label
+    spec:
+      containers:
+      - name: zishan-portfolio-main-c
+        image: localhost:6500/zishan-portfolio-main-i
+        ports:
+        -containerPort: 80
